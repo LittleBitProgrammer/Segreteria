@@ -1,23 +1,24 @@
 //import lib
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 
 //create a component (this component work only with bootstrap)
-const NavItem = props => {
-    const pageURI = window.location.pathname+window.location.search;
-    const liClassName = (props.path === pageURI) ? "nav-item active" : "nav-item";
-    const aClassName = props.disabled ? "nav-link disabled" : "nav-link";
-    console.log(pageURI,liClassName,aClassName);
+const NavItem = ({name, exact, path, disabled}) => {
+    const aClassName = disabled ? "nav-link disabled" : "nav-link";
     
     return (
-      <li className={liClassName}>
-        <Link to={props.path} className={aClassName}>
-          {props.name}
-          {(props.path === pageURI) ? (<span className="sr-only">(current)</span>) : ''}
-        </Link>
+      <li className='nav-item' data-toggle="collapse" data-target=".navbar-collapse.show">
+        <NavLink to={path} className={aClassName} activeClassName='active' exact={exact}>
+          {name}
+        </NavLink>
       </li>
     );
   }
+
+NavItem.defaultProps = {
+  name: 'undefined',
+  exact: false
+};
 
 // export a component 
 export default NavItem;
