@@ -1,11 +1,13 @@
 //import lib
 import React from 'react'
-import {BrowserRouter, Link} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 // NAVIGATION
 import Navigation from './navbar/Navigation';
 import NavItem from './navbar/NavItem';
-import NavDropdown from './navbar/NavDropdown';
+//import NavDropdown from './navbar/NavDropdown';
 import Routes from './routes/routes'
+// BOTTOMBAR
+import BottomBar from './BottomBar';
 
 //create a component
 class App extends React.Component {
@@ -25,6 +27,7 @@ class App extends React.Component {
                             <NavItem path="/studente" name="studente"/>
                         </Navigation>
                         <Routes/>
+                        <BottomBar leftText='© 20020-2020' author='Roberto Vecchio'/>
                     </div>
                 </BrowserRouter>
             </div>

@@ -1,6 +1,6 @@
 //import lib
 import React from 'react';
-import {NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 //create a component (this component work only with bootstrap)
 const NavItem = ({name, exact, path, disabled}) => {
