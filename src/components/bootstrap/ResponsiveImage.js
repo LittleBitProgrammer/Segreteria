@@ -2,8 +2,8 @@
 import React from 'react';
 
 // create a component
-const ResponsiveImage = ({path,altText,className}) => {
-    return <img src={path} alt={altText} className={`img-fluid ${className}`}/>
+const ResponsiveImage = ({path,altText,className,style}) => {
+    return <img src={path} alt={altText} className={`img-fluid ${className}`} style={style}/>
 }
 
 //export a component

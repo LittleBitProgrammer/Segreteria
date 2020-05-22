@@ -2,9 +2,9 @@
 import React from 'react'
 
 // create a component
-const Card = ({children}) => {
+const Card = ({children, className}) => {
     return (
-        <div className="card mb-3 mx-auto" style={{maxWidth: '540px'}}>
+        <div className={`card mb-3 ${className}`} style={{maxWidth: '640px'}}>
             <div className="row no-gutters">
                 {children}
             </div>
