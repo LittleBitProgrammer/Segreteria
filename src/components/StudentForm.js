@@ -15,12 +15,13 @@ class StudentForm extends React.Component{
             firstName: '',
             lastName: '',
             cf: '',
-            bDay: 0,
-            bMonth: '',
-            bYear: 0,
+            bDay: 'DEFAULT',
+            bMonth: 'DEFAULT',
+            bYear: 'DEFAULT',
         }
     }
     onChangeFields = (event) => {
+        console.log(event.target.name, event.target.value);
         this.setState({[event.target.name]: event.target.value});
     }
 
@@ -59,6 +60,7 @@ class StudentForm extends React.Component{
 
     
     render(){
+        console.log('bDay ', this.state.bDay)
         return (
             <form onSubmit={this.onSubmit}>
                 <FormRow>
@@ -109,10 +111,10 @@ class StudentForm extends React.Component{
                           id='Bday' 
                           name='bDay'
                           className='form-control' 
-                          value={this.state.bDay} 
+                          value={this.state.bDay}
                           onChange={this.onChangeFields} 
                           required>
-                            <option value={this.state.bDay} disabled>Day</option>
+                            <option value='DEFAULT' disabled>Day</option>
                             {this.days()}
                         </select>
                     </FormGroup>
@@ -124,6 +126,7 @@ class StudentForm extends React.Component{
                           value={this.state.bMonth} 
                           onChange={this.onChangeFields} 
                           required>
+                            <option value='DEFAULT' disabled>Month</option>
                             {this.months()}
                         </select>
                     </FormGroup>
@@ -135,7 +138,7 @@ class StudentForm extends React.Component{
                           value={this.state.bYear} 
                           onChange={this.onChangeFields}  
                           required>
-                            <option value={this.state.bYear} disabled>Year</option>
+                            <option value='DEFAULT' disabled>Year</option>
                             {this.years()}
                         </select>
                     </FormGroup>
