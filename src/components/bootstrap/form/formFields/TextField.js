@@ -1,20 +1,50 @@
 //import lib
-import React from 'react'
+import React, { Component } from 'react'
+import FormGroup from '../FormGroup'
 
 //create a component
-const TextField = (props) => {
+class TextField extends Component{
+
+  composeTextField = () => {
+    if(this.props.labelText){
+      return (
+          <div>
+            <label htmlFor='{props.id}'>{this.props.labelText}</label>
+            <input 
+              className='form-control'
+              type='text' 
+              id={this.props.id} 
+              name={this.props.name} 
+              value={this.props.value} 
+              onChange={this.props.onChange}
+              placeholder={this.props.placeholder}
+              required={this.props.required}
+            />
+          </div>
+      );
+    }else{
+      return(
+          <input 
+            className='form-control'
+            type='text' 
+            id={this.props.id} 
+            name={this.props.name} 
+            value={this.props.value} 
+            onChange={this.props.onChange}
+            placeholder={this.props.placeholder}
+            required={this.props.required}
+          />
+      );
+    }
+  }
+  
+  render(){
     return (
-        <input 
-          className='form-control'
-          type='text' 
-          id={props.id} 
-          name={props.name} 
-          value={props.value} 
-          onChange={props.onChange}
-          placeholder={props.placeholder}
-          required={props.required}
-        />
+      <FormGroup className={this.props.className}>
+        {this.composeTextField()}
+      </FormGroup>
     );
+  }
 }
 
 //export a component 

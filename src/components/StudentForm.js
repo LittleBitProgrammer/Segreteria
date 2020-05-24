@@ -95,40 +95,36 @@ class StudentForm extends React.Component{
         return (
             <form onSubmit={this.onSubmit}>
                 <FormRow>
-                    <FormGroup className='col-6'>
-                        <label htmlFor='firstNAme'>First name:</label>
-                        <TextField
-                            id='firstName' 
-                            name='firstName' 
-                            value={this.state.firstName} 
-                            onChange={this.onChangeFields}
-                            placeholder='Es. Mario'
-                            required={true}
-                            />
-                    </FormGroup>
-                    <FormGroup className='col-6'>
-                        <label htmlFor='lastNAme'>Last name:</label>
-                        <TextField 
-                            id='lasttName' 
-                            name='lastName' 
-                            value={this.state.lastName} 
-                            onChange={this.onChangeFields}
-                            placeholder='Es. Rossi'
-                            required={true}
-                            />
-                    </FormGroup>
-                </FormRow>
-                <FormGroup>
-                    <label htmlFor='cf'>Fiscal code:</label>
                     <TextField
-                      id='cf' 
-                      name='cf' 
-                      value={this.state.cf} 
+                      id='firstName' 
+                      name='firstName' 
+                      labelText='First name:'
+                      value={this.state.firstName} 
                       onChange={this.onChangeFields}
-                      placeholder='Es. VCCRRT93R06F83A'
+                      placeholder='Es. Mario'
+                      className='col-6'
                       required={true}
-                      />
-                </FormGroup>
+                    />
+                    <TextField 
+                      id='lasttName' 
+                      name='lastName' 
+                      labelText='Last name:'
+                      value={this.state.lastName} 
+                      onChange={this.onChangeFields}
+                      placeholder='Es. Rossi'
+                      className='col-6'
+                      required={true}
+                    />
+                </FormRow>
+                <TextField
+                  id='cf' 
+                  name='cf' 
+                  labelText='Fiscal code:'
+                  value={this.state.cf} 
+                  onChange={this.onChangeFields}
+                  placeholder='Es. VCCRRT93R06F83A'
+                  required={true}
+                />
                 <div className='mb-2'>Date of Birth:</div>
                 <DateField
                   dayId='Bday'
@@ -146,61 +142,54 @@ class StudentForm extends React.Component{
                   onMonthSelect={this.onMonthSelect}
                   required={true}
                 />
-                <FormGroup>
-                    <label htmlFor='birthPlace'>Birth place:</label>
-                    <TextField 
-                      id='birthPlace' 
-                      name='birthPlace' 
-                      value={this.state.birthPlace} 
-                      onChange={this.onChangeFields}
-                      placeholder='Es. Naples'
-                      required={true}
-                      />
-                </FormGroup>
+                <TextField 
+                  id='birthPlace' 
+                  name='birthPlace'
+                  labelText='Birth place:' 
+                  value={this.state.birthPlace} 
+                  onChange={this.onChangeFields}
+                  placeholder='Es. Naples'
+                  required={true}
+                />
                 <div className='mb-2'>Domicile:</div>
                 <FormRow>
-                    <FormGroup className='col-6'>
-                        <TextField  
-                          id='address' 
-                          name='address' 
-                          value={this.state.address} 
-                          onChange={this.onChangeFields}
-                          placeholder='Es. Via Leopardi'
-                          required={true}
-                        />
-                    </FormGroup>
-                    <FormGroup className='col-3'>
-                        <TextField
-                          id='addressNumber' 
-                          name='addressNumber' 
-                          value={this.state.addressNumber} 
-                          onChange={this.onChangeFields}
-                          placeholder='Es. 5'
-                          required={true}
-                        />
-                    </FormGroup>
-                    <FormGroup className='col-3'>
-                        <TextField
-                          id='cap' 
-                          name='cap' 
-                          value={this.state.cap} 
-                          onChange={this.onChangeFields}
-                          placeholder='Es. 8012'
-                          required={true}
-                        />
-                    </FormGroup>
-                </FormRow>
-                <FormGroup>
-                    <label htmlFor='freshman'>Freshman:</label>
-                    <TextField 
-                      id='freshman' 
-                      name='freshman' 
-                      value={this.state.freshman} 
+                    <TextField  
+                      id='address' 
+                      name='address' 
+                      value={this.state.address} 
                       onChange={this.onChangeFields}
-                      placeholder='Es. 0124001871'
+                      placeholder='Es. Via Leopardi'
+                      className='col-6'
                       required={true}
                     />
-                </FormGroup>
+                    <TextField
+                      id='addressNumber' 
+                      name='addressNumber' 
+                      value={this.state.addressNumber} 
+                      onChange={this.onChangeFields}
+                      placeholder='Es. 5'
+                      className='col-3'
+                      required={true}
+                    />
+                    <TextField
+                      id='cap' 
+                      name='cap' 
+                      value={this.state.cap} 
+                      onChange={this.onChangeFields}
+                      placeholder='Es. 8012'
+                      className='col-3'
+                      required={true}
+                    />
+                </FormRow>
+                <TextField 
+                  id='freshman' 
+                  name='freshman' 
+                  value={this.state.freshman} 
+                  onChange={this.onChangeFields}
+                  placeholder='Es. 0124001871'
+                  labelText='Freshman:'
+                  required={true}
+                />
                 <FormGroup>
                     <label htmlFor='studentEmail'>University Email:</label>
                     <EmailField 
@@ -229,17 +218,15 @@ class StudentForm extends React.Component{
                   onMonthSelect={this.onMonthSelect}
                   required={true}
                 />
-                <FormGroup>
-                    <label htmlFor='courseCode'>Course code:</label>
-                    <TextField 
-                      id='courseCode' 
-                      name='courseCode' 
-                      value={this.state.courseCode} 
-                      onChange={this.onChangeFields}
-                      placeholder='Es. 0124'
-                      required={true}
-                      />
-                </FormGroup>
+                <TextField 
+                  id='courseCode' 
+                  name='courseCode'
+                  labelText='Course code:' 
+                  value={this.state.courseCode} 
+                  onChange={this.onChangeFields}
+                  placeholder='Es. 0124'
+                  required={true}
+                />
                 <FormGroup>
                     <label htmlFor='studentPassword'>Password:</label>
                     <PasswordField
